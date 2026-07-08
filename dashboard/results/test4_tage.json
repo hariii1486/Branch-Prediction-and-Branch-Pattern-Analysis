@@ -1,0 +1,11 @@
+{
+  "summary": {
+    "total": 882,
+    "best_accuracy": 91.8367,
+    "winner": "TAGE",
+    "mispred": 72
+  },
+  "predictors": {
+    "TAGE": 91.8367
+  }
+}

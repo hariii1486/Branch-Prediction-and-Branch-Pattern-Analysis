@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branch Predictor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="header-controls">
+        <select id="selector">
+            <option value="test1">Test Case 1: Base Benchmark</option>
+            <option value="test2">Test Case 2: Bubble Sort</option>
+            <option value="test3">Test Case 3: Matrix Mult</option>
+            <option value="test4">Test Case 4: Bfs Graph Traversal</option>
+            <option value="test5">Test Case 5: Log Processing + Pattern Detection</option>
+        </select>
+    </div>
+
+    <div class="stats-row">
+        <div class="stat-card">
+            <label>Total branches</label>
+            <h1 id="total">0</h1>
+            <span class="sub">this testcase</span>
+        </div>
+        <div class="stat-card">
+            <label>Best accuracy</label>
+            <h1 id="best" class="txt-yellow">0%</h1>
+            <span id="winner" class="sub">---</span>
+        </div>
+        <div class="stat-card">
+            <label>Total mispredictions</label>
+            <h1 id="mispred" class="txt-red">0</h1>
+            <span class="sub">across all predictors</span>
+        </div>
+        <div class="stat-card">
+            <label>Warmup gain</label>
+            <h1 id="warmup">0</h1>
+            <span class="sub">historical trend</span>
+        </div>
+    </div>
+
+    <div class="main-panel">
+        <div class="panel-header">
+            <h3>PREDICTOR ACCURACY</h3>
+            <div class="legend">
+                <span><i class="dot g"></i> ≥90% best</span>
+                <span><i class="dot y"></i> 80–90%</span>
+                <span><i class="dot o"></i> 70–80%</span>
+                <span><i class="dot r"></i> <70% worst</span>
+            </div>
+        </div>
+        <canvas id="barChart" height="80"></canvas>
+    </div>
+
+    <div class="grid-row">
+        <div class="panel-card">
+            <h3>PER-BRANCH DETAIL</h3>
+            <div class="filter-btns">
+                <button class="active">All</button>
+                <button>Hard</button>
+                <button>Loop</button>
+            </div>
+            <div id="branch-list" class="branch-list">
+                </div>
+        </div>
+        <div class="panel-card">
+            <h3>MISPREDICTIONS PER BRANCH (CLICK = EXPLAIN)</h3>
+            <canvas id="missChart"></canvas>
+        </div>
+    </div>
+<!--
+    <div class="grid-row">
+        <div class="panel-card">
+            <h3>ACCURACY VS GHR HISTORY LENGTH</h3>
+            <canvas id="ghrChart"></canvas>
+        </div>
+        <div class="panel-card">
+            <h3>ALIASING RATE — T1 VS T2</h3>
+            <canvas id="aliasChart"></canvas>
+        </div>
+    </div>
+    -->
+
+    <script src="script.js"></script>
+</body>
+</html>

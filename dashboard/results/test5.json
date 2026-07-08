@@ -1,0 +1,28 @@
+{
+  "summary": {
+    "total": 479,
+    "best_accuracy": 77.2443,
+    "winner": "Hybrid",
+    "mispred": 109
+  },
+  "predictors": {
+    "1-bit": 74.5303,
+    "2-bit": 76.2004,
+    "Hybrid": 77.2443
+  },
+  "branches": [
+    {"pc": "0x59a9cc72614b", "miss": 1},
+    {"pc": "0x59a9cc726159", "miss": 1},
+    {"pc": "0x59a9cc7261be", "miss": 26},
+    {"pc": "0x59a9cc7261d9", "miss": 14},
+    {"pc": "0x59a9cc726202", "miss": 8},
+    {"pc": "0x59a9cc72626b", "miss": 1},
+    {"pc": "0x59a9cc7262bb", "miss": 1},
+    {"pc": "0x59a9cc726311", "miss": 25},
+    {"pc": "0x59a9cc72633f", "miss": 16},
+    {"pc": "0x59a9cc726353", "miss": 1},
+    {"pc": "0x59a9cc726392", "miss": 6},
+    {"pc": "0x59a9cc7263d7", "miss": 8},
+    {"pc": "0x59a9cc7263e5", "miss": 1}
+  ]
+}
